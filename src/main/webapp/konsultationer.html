@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mine konsulationer</title>
+  <link rel="stylesheet" href="konsultationer.css">
+  <script src="script.js"></script>
+
+
+</head>
+
+
+<style>
+  table, th, td{
+    border: 1px solid rgb(12, 0, 0);
+  <!--text-shadow: 1px 1px 70px black, 0 0 25px lightskyblue, 0 0 5px dodgerblue;-->
+    color: rgba(250, 0, 0, 0.5);
+  }
+</style>
+
+<body>
+
+<div class="baggrundsbillede"></div>
+<div class="Titel">
+  <h1>Mine konsulationer</h1>
+  <p>
+    <label class="cprfelt" for="CPR-nr"> </label>
+    <input type="text" placeholder="CPR-nr" id="CPR-nr"/>
+   <!-- <input type="date">-->
+  </p>
+
+  <table id="konsultationertabel" style="width:auto; border:3px solid black; margin-left:auto; margin-right:auto; height:300px; overflow-y:scroll; display: block;" class="table" >
+    <tr class="th">
+      <th>Fulde navn</th>
+     <th>CPR-nr</th>
+       <th>Tid</th>
+       <th>Dato</th>
+       <th>Notat</th>
+    </tr>
+
+
+      </table>
+
+
+<div>
+
+  <p>
+    <a href="velkommen.html">
+      <input class="Tilbage" type="button" value="Tilbage"> </a>
+
+  </p>
+</div>
+<div>
+  <input type="button" onclick="hentAftale()" value="update">
+
+</div>
+
+</div>
+
+
+<input id="knap" class="knap" type="checkbox">
+<label for="knap"></label>
+<a class="one" href="Forside.html">Log Ud</a> <!-- adder logo -->
+<div class="two">Konto</div>
+<div class="three" type="button">Kontakt</div>
+
+</div>
+
+
+
+</div>
+
+<li id="aftaler">
+
+</li>
+
+</body>
+</html>
+
