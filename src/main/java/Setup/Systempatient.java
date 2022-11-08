@@ -1,4 +1,4 @@
-package Model;
+package Setup;
 
 
 import javax.ws.rs.*;

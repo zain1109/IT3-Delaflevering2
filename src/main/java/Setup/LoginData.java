@@ -1,4 +1,4 @@
-package Model;
+package Setup;
 
 public class LoginData {
     @Override
