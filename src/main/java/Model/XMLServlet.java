@@ -1,3 +1,5 @@
+package Model;
+
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
@@ -6,7 +8,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Locale;
 
 @WebServlet(name = "XMLServlet", urlPatterns = "/api")
 public class XMLServlet extends HttpServlet {

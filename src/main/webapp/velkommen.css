@@ -1,0 +1,181 @@
+*{
+    box-sizing: border-box;
+}
+body,html{
+    height:100%;
+    margin:0;
+    padding:0;
+    font-family: Sans-Serif,serif;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+h1{
+    font-size:50px;
+    text-transform: full-size-kana;
+    margin:0;
+}
+
+h2{
+    font-size:3px;
+    text-transform: uppercase;
+    margin:0;
+}
+
+
+.baggrundsbillede{
+    background-image: url("April 07, 2022.png");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    filter: blur(1px);
+
+}
+
+.Boks1{
+    position: fixed;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    width: 250px;
+    padding: 450px 0;
+    text-align: center;
+    border-top-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    background-color: rgba(87, 0, 0, 0.3);
+    color: #f3f0f0;
+    font-weight: bold;
+}
+
+.Boks2{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    width: 250px;
+    padding: 450px 0;
+    text-align: center;
+    border-top-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    background-color: rgba(87, 0, 0, 0.3);
+    color: #f3f0f0;
+    font-weight: bold;
+}
+
+.baggrundstext p{
+    padding: 0 8%;
+    font-family: Sans-Serif, serif;
+
+}
+
+b{
+    display: inline-block;
+    padding: 10px 50px;
+    border: 2px solid #fff;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    margin-top: 15px;
+}
+
+.Titel{
+    text-align: left;
+    position: absolute;
+    top: 20%;
+    bottom: 80%;
+    width: 100%;
+    color: rgba(224, 123, 123, 0.5);
+    font-weight: bold;
+}
+
+.knap { display: none; }
+
+.knap + label {
+    cursor: pointer;
+    position: absolute;
+    right: 83em;
+    bottom: 1em;
+    background-color: rgba(224, 123, 123, 0.5);
+    height: 90px;
+    width: 90px;
+    border-radius: 25%;
+    z-index: 2;
+}
+
+.knap + label:before, .knap + label:after {
+    position: absolute;
+    content: '';
+    height: 10px;
+    width: .10em;
+    background-color: #f3f0f0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: .25em;
+    transition: all .30s;
+
+}
+
+.knap + label:before {
+    height: 35px;
+    width: .30em;
+}
+
+.knap+ label:after {
+    width: 35px;
+    height: .35em;
+}
+
+.knap:checked + label:before { transform: rotatez(-45deg); }
+
+.knap:checked + label:after { transform: rotatez(-45deg); }
+
+.one, .two, .three {
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    right: 70em;
+    bottom: 7em;
+    padding: 2em;
+    width: 1em;
+    height: 1em;
+    border-radius: 25%;
+    opacity: 0;
+    z-index: 1;
+    transform: rotateZ(90deg);
+    font-size: 1em;
+    color: #f3f0f0;
+    transition-property: all;
+    transition-duration: .50s;
+    display: flex;
+    justify-content:center;
+    align-items: center; /* placering af tekst inde i boksene */
+}
+
+.knap:checked ~ .one, .knap:checked ~ .two, .knap:checked ~ .three { opacity: 1; }
+
+.knap:checked ~ .one {
+    background-color: rgba(65, 1, 1, 0.5);
+    transform: translateX(-13em);
+    transition-delay: .2s;
+}
+
+.knap:checked ~ .two {
+    background-color: #d25757;
+    transform: translateX(-13em) translateY(-6.5em);
+    transition-delay: .1s;
+}
+
+.knap:checked ~ .three {
+    background-color: #d33838;
+    transform: translateX(-13em) translateY(-13em);
+}
+
+.knap:checked ~.one:hover, .knap:checked ~ .two:hover, .knap:checked ~ .three:hover { opacity: .9; }

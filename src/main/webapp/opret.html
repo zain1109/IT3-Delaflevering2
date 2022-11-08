@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Opret</title>
+  <link rel="stylesheet" href="opret.css">
+  <script src="script.js"></script>
+
+</head>
+<body>
+<div class="baggrundsbillede"></div>
+
+<div class="Titel">
+  <h1>Opret en konsultation</h1>
+  <p>
+
+  <div class="baggrundstext">
+    <p>
+  <form id="aftaleform">
+      <label for="CPRnummer">CPR-nummer</label><br>
+      <input type="text" id="CPRnummer" name="cpr" style="width: 130px; height: 15px;" required><br>
+    <label for="Navn">For og efternavn</label><br>
+    <input type="text" id="Navn" name="name" style="width: 150px; height: 15px;" required><br>
+
+    <label class="tidspunkt"> Tidspunkt og dato </label><br>
+    <input type="time"  id="tidspunkt" name="tidspunkt" placeholder="Fx 08:00-08:30">
+    <input type="date"  id="dato" name="dato" placeholder="Fx 02-02-2022">  <br>
+
+    <label for="notat">Notat</label><br>
+    <input type="text" id="notat" name="notat" style="width: 450px; height: 150px;" required> <br>
+
+
+</form>
+    <input type="button" onclick="opretAftale()" style="width: 20px; height: 15px;" required>Gem </input>
+
+
+
+       </p>
+
+   <p>
+     <a href="velkommen.html">
+     <input class="Tilbage" type="button" value="Tilbage"> </a>
+   </p>
+
+
+       <!-- Der skal være mellemrum mellem de to bokse -->
+
+
+  </div>
+
+</div>
+
+<input id="knap" class="knap" type="checkbox">
+<label for="knap"></label>
+<a class="one" href="Forside.html">Log Ud</a> <!-- adder logo -->
+<div class="two">Konto</div>
+<div class="three" type="button">Kontakt</div>
+
+<div class="dropdown">
+  <button class="dropbtn">Menu</button>
+  <div class="dropdown-content">
+    <a href="#">E-journal</a>
+    <a href="https://pro.medicin.dk">Pro.medicin.dk</a>
+    <a href="#">Laboratoriesvar</a>
+  </div>
+</div>
+
+
+
+</form>
+</body>
+</html>
