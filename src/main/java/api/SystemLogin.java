@@ -1,8 +1,7 @@
 package api;
 
-import datalayer.UserDAO;
 import model.LoginData;
-import business.JWTHandler;
+import business.KeyHandler;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
