@@ -23,15 +23,15 @@ public class PatientData {
     public List<Opretkonsultation> getOpretkonsultation () throws SQLException {
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://mysql-db.caprover.diplomportal.dk:3306/s205499";
-            String user = "s205499";
-            String pass = "77BJ4H2NODdIsbVtV8FF0";
+            Class.forName(" ");
+            String url = " ";
+            String user = " ";
+            String pass = " ";
 
             Connection conn = DriverManager.getConnection(url, user, pass);
             Statement statement = conn.createStatement();
 
-            ResultSet rs = statement.executeQuery("SELECT * FROM Opretkonsultation");
+            ResultSet rs = statement.executeQuery("SELECT * FROM  ");
             List<Opretkonsultation> OpretkonsultationList =new ArrayList<>();
             while (rs.next()) {
                 String cpr = rs.getString("cpr");
@@ -60,7 +60,7 @@ public class PatientData {
             statement.close();
             return OpretkonsultationList;
         } catch (Exception e) {
-            System.err.println("Got an exception! ");
+            System.err.println("Exception!");
             System.err.println(e.getMessage());
 
         }
@@ -76,12 +76,12 @@ public class PatientData {
 
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(" ");
             System.out.println("Connecting to database");
-            conn = DriverManager.getConnection("jdbc:mysql://mysql-db.caprover.diplomportal.dk:3306/s205499", "s205499", "77BJ4H2NODdIsbVtV8FF0");
-            System.out.println("You are now connected to database");
+            conn = DriverManager.getConnection(" ", " ", " ");
+            System.out.println("Connected to database!");
 
-            System.out.println("Inserting data into table called Opretkonsultation");
+            System.out.println("Table called Opretkonsultation");
             stmt = conn.createStatement();
 
             //vi åbner op for sql injection for at udngå dette skal man lave en pepered statment
