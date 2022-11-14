@@ -9,7 +9,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "XMLServlet", urlPatterns = "/api")
+@WebServlet(
+        name = "XMLServlet",
+        urlPatterns = "/api"
+)
 public class XMLServlet extends HttpServlet {
 
     protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws IOException {
