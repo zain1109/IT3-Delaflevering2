@@ -5,8 +5,7 @@ import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.crypto.MacProvider;
-import model.LoginData;
-
+import Setup.LoginData;
 import javax.crypto.spec.SecretKeySpec;
 import javax.ws.rs.NotAuthorizedException;
 import java.security.Key;

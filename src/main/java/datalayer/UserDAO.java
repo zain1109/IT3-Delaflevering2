@@ -14,21 +14,21 @@ public class UserDAO {
 
         try {
 
-            Class.forName(" ");
-            String url = " ";
-            String user = "";
-            String pass = " ";
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = "jdbc:mysql://mysql-db.caprover.diplomportal.dk:3306/s215852";
+            String user = "s215852";
+            String pass = "si2AKXMXGbAqpe54OAWLX";
 
             Connection conn = DriverManager.getConnection(url, user, pass);
             Statement statement = conn.createStatement();
 
-            PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM  WHERE  = ?;");
+            PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM Sundhedspersonale WHERE IT3 = ?;");
             preparedStatement.setString(1,brugernavn);
             ResultSet rs = preparedStatement.executeQuery();
             LoginData loginData=new LoginData();
             while (rs.next()) {
-                String username = rs.getString(" ");
-                String password = rs.getString(" ");
+                String username = rs.getString("Brugernavn");
+                String password = rs.getString("Adgangskode");
                 System.out.println(username);
                 System.out.println(password);
                 loginData.setUsername(username);

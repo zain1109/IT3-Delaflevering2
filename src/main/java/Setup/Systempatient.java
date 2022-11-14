@@ -3,7 +3,7 @@ package Setup;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.awt.image.PixelGrabber;
+import javax.ws.rs.core.Response;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.concurrent.locks.StampedLock;
@@ -17,8 +17,8 @@ public class Systempatient {
     //Hvis adgang til dataen haves
     public List<Opretkonsultation> getOpretkonsultation(@HeaderParam("authorization") String token) throws SQLException {//validere en token
         String s = token.split(" ")[1];
-        StampedLock Keyhandler;
-        Keyhandler.validate(s);
+        StampedLock Keyhandler = null;
+        Keyhandler.validate(Long.parseLong(s));
         return PatientData.getInstance().getOpretkonsultation();
 
     }
@@ -42,7 +42,6 @@ public class Systempatient {
         System.out.println(a.getdato());
         System.out.println(a.getnotat());
         PatientData.getInstance().savekonsultation(a);
-        PixelGrabber Response;
         Response.status(400).entity("message").build();
         return a;
 

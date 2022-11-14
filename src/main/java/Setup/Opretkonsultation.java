@@ -10,9 +10,7 @@ public class Opretkonsultation<nummer> {
         return name;
     }
 
-    public void setNavn(String name) {
-        this.setNavn(); = name;
-    }
+    public void setName(String Name){ this.name = Name;}
 
     private String Cpr;
 
