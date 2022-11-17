@@ -1,17 +1,17 @@
 package Business;
 
+
+import Setup.LoginData;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.crypto.MacProvider;
-import Setup.LoginData;
+
 import javax.crypto.spec.SecretKeySpec;
 import javax.ws.rs.NotAuthorizedException;
 import java.security.Key;
 import java.util.Calendar;
-import java.util.stream.DoubleStream;
-
 
 public class KeyHandler {
 
@@ -21,7 +21,7 @@ public class KeyHandler {
     public static String generateJwtToken(LoginData user){ //
         Calendar expiry = Calendar.getInstance();
         expiry.add(Calendar.MINUTE, TOKEN_EXPIRY);
-        DoubleStream Jwts = null;
+        // DoubleStream Jwts = null;
         return Jwts.builder()
                 .setIssuer("test")
                 .claim("user", user.getUsername()) //data

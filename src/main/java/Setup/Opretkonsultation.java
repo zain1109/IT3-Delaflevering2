@@ -52,6 +52,8 @@ public class Opretkonsultation<nummer> {
         this.notat = notat;
     }
 
+    public void setNavn(String navn) {
+    }
 }
 
 
