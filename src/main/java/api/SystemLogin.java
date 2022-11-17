@@ -1,8 +1,10 @@
 package api;
 
-import Model.LoginData;
+import Setup.LoginData;
 
-import javax.ws.rs.*;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 
 
@@ -18,5 +20,9 @@ public class SystemLogin {
         String token = loginCon.validateUser(loginData);
         System.out.println(token);
         return token;
+    }
+
+    private String validateUser(LoginData loginData){
+        return null;
     }
 }
