@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>EKG side</title>
+  <link rel="stylesheet" href="css/Ekgside.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/Ekgide.js"></script>
+
+
+</head>
+<body>
+
+<!--HOTBAR-->
+<div class="hotbar">
+  <button class="button1" onclick="window.location.replace('velkommen.html')"> Tilbage</button>
+  <button class="button2" onclick="logud()">Log ud</button>
+</div>
+
+<i class="printKnap"> </i> <a id="print" href="#" onclick="window.print();return false; ">🖨 Print</a>
+
+<!--Graf-->
+<div class="container1" data-title="EKG">
+  <canvas id="ekgplot" height="350" width="500"></canvas>
+</div>
+
+<!--oplysninger box-->
+<div class="container2" ><h> Data </h>
+  <div>
+
+    <input type="text" placeholder="indtast SessionID" id="sessionID" name="sessionID" required >
+
+
+    <input class="egk-knapper" type="button" value="  Hent EKG  " onclick="hentEKG()" >
+
+  </div>
+
+
+  <div>
+    <form action="meddelelse.html" target="result" method="get">
+
+      <div style="margin-top:50px;"></div>
+
+      <p><input class="sabmit1" type="submit" value="Se meddelelser"></p>
+
+    </form>
+    <iframe
+            name="result" style="height:200px;width:320px;">
+    </iframe>
+
+  </div>
+
+</div>
+</body>
+</html>

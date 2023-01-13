@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpretPatient</title>
+    <link rel="stylesheet" href="css/patienter.css">
+    <script src="js/script.js"></script>
+
+
+</head>
+
+
+<style>
+    table, th, td{
+        border: 1px solid rgb(12, 0, 0);
+    <!--text-shadow: 1px 1px 70px black, 0 0 25px lightskyblue, 0 0 5px dodgerblue;-->
+        color: rgba(250, 0, 0, 0.5);
+    }
+</style>
+
+<body>
+
+<div class="baggrundsbillede"></div>
+<div class="Titel">
+    <br>
+    <div id="detførste">
+        <div class="overskriftside">
+            Indtast CPR-nummer for at oprette patient
+        </div>
+        <form id="aftaleforme">
+            <p></p>
+            <label>
+                <input type="text" name="cpr" placeholder="CPR-nummer">
+            </label>
+            <p></p>
+            <input id="opretPatient" onclick="opretPatient()" type="button" value="Opret patient">
+        </form>
+        <p></p>
+    </div>
+    <p>
+
+    <p><input type="button" id="TilbageButton" onclick="window.location.replace('velkommen.html')" class="button1" value="Tilbage"></p>
+    <p><input type="button" id="" onclick="window.location.replace('velkommen.html')" class="button1" value="Tilbage"></p>
+
+    </p>
+</div>
+</body>
+</html>
