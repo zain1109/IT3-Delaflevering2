@@ -1,6 +1,10 @@
 package Setup;
 
 public class LoginData {
+    public LoginData() {
+
+    }
+
     @Override
     public String toString() {
         return "LoginData{" +

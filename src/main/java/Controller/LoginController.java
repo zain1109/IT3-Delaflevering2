@@ -1,12 +1,14 @@
 package Controller;
 
-import javax.ws.rs.WebApplicationException;
-import dataAccesLayer.LoginSQL;
-import model.LoginData;
-import model.User;
-import org.mindrot.jbcrypt.BCrypt;
+import Setup.LoginData;
+import datalayer.UserDAO;
 
-import java.sql.SQLException;
+import javax.ws.rs.WebApplicationException;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class LoginController {
 
     private LoginController() {
@@ -19,29 +21,43 @@ public class LoginController {
     }
 
     public String doLogin(LoginData loginData) {
-        try {
-            // Eksistere en user i SQL
-            String brugerListe = LoginSQL.getLoginSqlObj().returnLoginUserDB(loginData.getUsername());
-            String[] opdelt = brugerListe.split("\\|");
-            // kontrollere password
-            if (hashControl(loginData.getPassword(), opdelt[1])) {
-                User user = new User(loginData);
-                if (opdelt[3].equals("1")) {
-                    user.setDoctor(true);
-                } else {
-                    user.setDoctor(false);
-                }
-                //Give JavaWebToken
-                return JWTHandler.generateJwtToken(user);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        // sql kald der kontrollere om brugeren eksitere
+        LoginData userData = null;
+        String brugerListe = String.valueOf(UserDAO.findUser(userData.getUsername()));
+        System.out.println(loginData.getUsername());
+
+        // kontrol af login og generer token
+        if (loginVal(brugerListe, loginData.getPassword())) {
+            User user = new User(loginData);
+            LoginData User = null;
+            return JWTHandler.generateJwtToken(User);
         }
         throw new WebApplicationException("fejl", 401);
     }
-//her går vi ind og genererer en hash af det givne password ved hjælp af BCrypt biblioteket
-    public static String generateHash(String pass) {
-        String salt = (BCrypt.gensalt(10));
-        System.out.println(salt);
-        return BCrypt.hashpw(pass, salt); //Værdien, der bliver returneret af denne metode, er en hashet version af passwordet, der er sikkert at gemme i en database.
+
+    public boolean loginVal(String brugerliste, String pass) {
+        if (brugerliste.length() > 1) {
+            String[] opdelt = brugerliste.split("\\|");
+            int salt = Integer.parseInt(opdelt[2]);
+            String hashcheck = generateHash(pass, salt);
+            if (opdelt[1].equals(hashcheck)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static String generateHash(String pass, int salt) {
+        try {
+            MessageDigest md5 = MessageDigest.getInstance("MD5");
+            pass += String.valueOf(salt);
+            md5.update(StandardCharsets.UTF_8.encode(pass));
+            return String.format("%032x", new BigInteger(1, md5.digest()));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return pass;
+    }
+
+}
 

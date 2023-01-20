@@ -1,12 +1,11 @@
 package api;
 
-import controller.JWTHandler;
-import model.User;
+import Controller.JWTHandler;
+import Controller.User;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
-import javax.ws.rs.ext.Provider;
 
 public class AuthFilter implements ContainerRequestFilter {
 

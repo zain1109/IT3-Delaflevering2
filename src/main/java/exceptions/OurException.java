@@ -1,7 +1,5 @@
 package exceptions;
 
-package exceptions;
-
 public class OurException extends Exception {
 
     @Override

@@ -1,7 +1,3 @@
-
-*{
-    box-sizing: border-box;
-}
 body,html{
     height:100%;
     margin:0;
@@ -11,52 +7,57 @@ body,html{
     overflow-x: hidden;
 }
 
+h1{
+    font-size:45px;
+    text-transform: uppercase;
+    margin:0;
+}
+
+h2{
+    font-size:40px;
+    text-transform: uppercase;
+    margin:0;
+}
 
 .baggrundsbillede{
-    background-image: url("April 07, 2022.png");
+    background-image: url("../April 07, 2022.png");
     -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     height: 100%;
-    filter: blur(2px);
+    filter: blur(3px); /*effet på slørhed af baggrund*/
+}
 
+.baggrundstext p{
+    padding: 0 8%;
+    font-family: Sans-Serif, serif;
+}
+
+b{
+    display: inline-block;
+    padding: 10px 50px;
+    border: 2px solid #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    color: #ffffff;
+    margin-top: 15px;
 }
 
 .Titel{
     text-align: center;
-    position: absolute;
-    top: 10%;
-    bottom: 90%;
+    top: 15%;
+    bottom: 5%;
     width: 100%;
     color: rgba(87, 0, 0, 0.3);
     font-weight: bold;
+
 }
 
-
-.table{
-    position: center;
-    background-color: transparent;
+.Titel{
+    position: fixed;
 }
-
-.th{
-    border: 3px solid #0c0000;
-    background-color: transparent;
-}
-
-.td{
-    border: 3px solid black;
-    background-color: transparent;
-}
-
-#tabel{
-    align-table: center;
-    margin-top: 20px;
-    margin-left: 2px;
-    background-color: transparent;
-}
-
 
 .knap { display: none; }
 
@@ -144,3 +145,4 @@ body,html{
 }
 
 .knap:checked ~.one:hover, .knap:checked ~ .two:hover, .knap:checked ~ .three:hover { opacity: .9; }
+

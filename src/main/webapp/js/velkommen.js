@@ -5,7 +5,7 @@ async function Logud(){
 
 async function Tilbage(){
     localStorage.setItem("token"," ");
-    window.location.href="vælgbruger.html"
+    window.location.href="Forside.html"
 
 }
 
@@ -18,7 +18,7 @@ async function opretPatient(){
             "authorization": "Bearer "+localStorage.getItem("token")
         }
     })
-    window.location.href="opretPatient.html"
+    window.location.href="patienter.html"
 }
 
 async function hentkonsultationer() {
@@ -42,4 +42,4 @@ async function ekgsessions() {
             "authorization": "Bearer " + localStorage.getItem("token")
         }
     })
-    window.location.href = "ekgVisual.html"
+    window.location.href = "EKGside.html"}

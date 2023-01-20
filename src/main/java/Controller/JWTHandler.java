@@ -1,19 +1,20 @@
 package Controller;
 
-import java.security.Key;
-import java.util.Calendar;
-
-import io.jsonwebtoken.Claims;
+import Setup.LoginData;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.MacProvider;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.impl.crypto.MacProvider;
+
+import javax.crypto.spec.SecretKeySpec;
+import java.security.Key;
+import java.util.Calendar;
 
 public class JWTHandler {
     private static Key key;
     private static final int TOKEN_EXPIRY = 2880; // 2 dage
 
-    public static String generateJwtToken(User user) {
+    public static String generateJwtToken(LoginData user) {
         Calendar expiry = Calendar.getInstance();
         expiry.add(Calendar.MINUTE, TOKEN_EXPIRY);
         return Jwts.builder()
@@ -36,6 +37,9 @@ public class JWTHandler {
         return key;
     }
 
-    public static User validate(String authentication) throws JwtException {
+    public static <User> User validate(String authentication) throws JwtException {
         String[] tokenArray = authentication.split(" ");
-        String token = tokenArray[tokenArray.length - 1
+        String token = tokenArray[tokenArray.length - 1];
+        return null;
+    }
+}

@@ -1,10 +1,7 @@
 package Controller;
 
-import dataAccesLayer.SQL;
+import Business.AftaleListe;
 import exceptions.OurException;
-import model.Aftale;
-import model.AftaleListe;
-
 
 import java.sql.SQLException;
 
@@ -35,17 +32,45 @@ public class AftaleController {
     // Returnerer en liste over aftaler for et givent CPR-nr. eller en tom liste, hvis CPR-nummeret er ugyldigt eller ikke angivet
     public AftaleListe cprSearch(String cpr) throws SQLException, OurException {
         if (cpr == null) {
-            return SQL.getSqlOBJ().getAftalerListe();
+            //return SQL.getSqlOBJ().getAftalerListe();
         }
         if (cprCheck(cpr)) {
-            return SQL.getSqlOBJ().cprSearch(cpr);
+            //return SQL.getSqlOBJ().cprSearch(cpr);
         }
         return new AftaleListe();
     }
 
-    // Opretter en aftale med givne oplysninger ved hjælp af SQL-klassen. Hvis CPR-nummeret er ugyldigt eller noten er for lang, kastes en OurException med en passende fejlmeddelelse
-    public String createAftale(String cpr, String timestart, String timeend, String note) throws OurException {
+    public String createAftale(String cpr, String timestart, String timeend, String notat) {
+        return cpr;
+    }
+}
+
+// Opretter en aftale med givne oplysninger ved hjælp af SQL-klassen. Hvis CPR-nummeret er ugyldigt eller noten er for lang, kastes en OurException med en passende fejlmeddelelse
+  /*  public String createAftale(String cpr, String timestart, String timeend, String note) throws OurException {
         Aftale aftale = new Aftale();
         if (cprCheck(cpr)) {
             if (note.length() < 255) {
-                aftale
+                aftale.setCPR(cpr);
+                aftale.setTimeStart(timestart);
+                aftale.setTimeEnd(timeend);
+                aftale.setNotat(note);
+                aftale.setKlinikID("4");
+
+                SQL.getSqlOBJ().insertAftaleSQL(aftale);
+                return "added patient" + aftale;
+            } else {
+                //forkert note
+                OurException ex = new OurException();
+                ex.setMessage("For lang note, skal være under 255 tegn.");
+                throw ex;
+            }
+        } else {
+            // forkert cpr
+            OurException ex = new OurException();
+            ex.setMessage("CPR skal være 10 cifre, yyyymmddxxxx");
+            throw ex;
+        }
+
+
+    }
+*/

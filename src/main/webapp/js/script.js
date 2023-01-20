@@ -72,35 +72,5 @@ async function login() {
     const payloadJson = JSON.parse(payload);
     localStorage.setItem("user",payloadJson.username);
     //Viderestil til den rigtige side!
-    window.location.href="velkommen.html"
+    window.location.href="velkommen.html"}
 
-
-/*
-    function doLogin() {
-    this.state=Loginstates.LOGGING_IN;
-    fetch(baseUrl + "rest/login",{
-        method:"POST",
-        body:JSON.stringify(this.logindata),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then(
-        (response)=> {
-            response.text().then(
-                (token)=> {
-                    console.log("Got Token: " + token)
-                    localStorage.setItem("token",token);
-                }
-
-            )}
-    ).catch(()=>alert("fejl")) }
-
-    function fetchaftaler(){
-        const token = tokenStore.token;
-        this.loading = states.LOADING;
-        fetch(baseUrl + "rest/aftaler", {
-            headers: {
-                Authorization: localStorage.getItem("token")
-            }
-        }).then(/*....* */
-    }

@@ -7,9 +7,7 @@ import java.sql.*;
 
 public class UserDAO {
 
-
-
-    public LoginData findUser(String brugernavn) {
+    public static LoginData findUser(String brugernavn) {
 
 
         try {

@@ -19,7 +19,7 @@ public class Control {
         //Kontroller om der er en bruger med det rette kodeord?
         if (user !=null && user.getPassword().equals(loginData.getPassword())) {
             //returnere en token
-            return Business.JWTHandler.generateJwtToken(loginData);
+            return Controller.JWTHandler.generateJwtToken(loginData);
 
         }
         //Hvis login fejler, afvises der med en 401
